@@ -31,3 +31,5 @@ yarn-error.log*
 .prettierrc
 package-lock.json
 yarn.lock
+
+src/ex.3-1026-2/data
