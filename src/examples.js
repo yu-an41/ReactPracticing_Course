@@ -5,6 +5,9 @@ import Menu from './ex.4-1026-3-Menu/Menu'
 import Demo from './ex.5-1026-4-array/Demo'
 import Parent from './ex.6-1027-1/Parent'
 
+//預設導出的話可以再導入時直接給改名)
+import ParentPropTypes from './ex.7-1027-2/Parent'
+
 export const examples = [
   {
     name: '1-計數器',
@@ -35,5 +38,10 @@ export const examples = [
     name: '6-props屬性',
     path: './ex.6-1027-1/Parent',
     component: Parent,
+  },
+  {
+    name: '7-PropTypes',
+    path: './ex.7-1027-2/Parent',
+    component: ParentPropTypes,
   },
 ]

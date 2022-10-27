@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './Menu.css'
 
 function Menu() {
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState('')
   const menuItems = ['首頁', '關於我們', '產品']
 
   return (
