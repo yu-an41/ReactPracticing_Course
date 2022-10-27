@@ -7,6 +7,7 @@ import Parent from './ex.6-1027-1/Parent'
 
 //預設導出的話可以再導入時直接給改名)
 import ParentPropTypes from './ex.7-1027-2/Parent'
+import ParentDataFlow from './ex.8-1027-3/Parent'
 
 export const examples = [
   {
@@ -43,5 +44,10 @@ export const examples = [
     name: '7-PropTypes',
     path: './ex.7-1027-2/Parent',
     component: ParentPropTypes,
+  },
+  {
+    name: '8-三種資料流',
+    path: './ex.8-1027-3/Parent',
+    component: ParentDataFlow,
   },
 ]
