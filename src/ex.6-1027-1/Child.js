@@ -1,10 +1,14 @@
-function Child({ cat, name, price }) {
+function Child({ total, setTotal }) {
   // const {cat, name, price} = props
   return (
     <>
-      <div>category: {cat}</div>
-      <div>name: {name}</div>
-      <div>price: {price}</div>
+      <h1
+        onClick={() => {
+          setTotal(total + 1)
+        }}
+      >
+        {total}
+      </h1>
     </>
   )
 }
