@@ -11,7 +11,7 @@ function ChildB(props) {
           props.setDataFromChildB(childBData)
         }}
       >
-        把資料傳給Parent
+        把資料傳給A
       </button>
     </>
   )

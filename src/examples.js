@@ -11,34 +11,9 @@ import ParentDataFlow from './ex.8-1027-3/Parent'
 
 export const examples = [
   {
-    name: '1-計數器',
-    path: './ex.1-1025/Counter',
-    component: Counter,
-  },
-  {
-    name: '2-JSX資料的值',
-    path: './ex.2-1026-1/JSXValue',
-    component: JSXValue,
-  },
-  {
-    name: '3-學生資料清單',
-    path: './ex.3-1026-2/StudentList',
-    component: StudentList,
-  },
-  {
-    name: '4-點亮選單',
-    path: './ex.4/Menu',
-    component: Menu,
-  },
-  {
-    name: '5-陣列增刪',
-    path: './ex.5-1026-4-array/Demo',
-    component: Demo,
-  },
-  {
-    name: '6-props屬性',
-    path: './ex.6-1027-1/Parent',
-    component: Parent,
+    name: '8-三種資料流',
+    path: './ex.8-1027-3/Parent',
+    component: ParentDataFlow,
   },
   {
     name: '7-PropTypes',
@@ -46,8 +21,33 @@ export const examples = [
     component: ParentPropTypes,
   },
   {
-    name: '8-三種資料流',
-    path: './ex.8-1027-3/Parent',
-    component: ParentDataFlow,
+    name: '6-props屬性',
+    path: './ex.6-1027-1/Parent',
+    component: Parent,
+  },
+  {
+    name: '5-陣列增刪',
+    path: './ex.5-1026-4-array/Demo',
+    component: Demo,
+  },
+  {
+    name: '4-點亮選單',
+    path: './ex.4/Menu',
+    component: Menu,
+  },
+  {
+    name: '3-學生資料清單',
+    path: './ex.3-1026-2/StudentList',
+    component: StudentList,
+  },
+  {
+    name: '2-JSX資料的值',
+    path: './ex.2-1026-1/JSXValue',
+    component: JSXValue,
+  },
+  {
+    name: '1-計數器',
+    path: './ex.1-1025/Counter',
+    component: Counter,
   },
 ]
