@@ -1,10 +1,14 @@
-function Child({ total, setTotal }) {
+import { useState } from 'react'
+
+function Child({ increment = 1 }) {
   // const {cat, name, price} = props
+  const [total, setTotal] = useState(0)
+
   return (
     <>
       <h1
         onClick={() => {
-          setTotal(total + 1)
+          setTotal(total + increment)
         }}
       >
         {total}
