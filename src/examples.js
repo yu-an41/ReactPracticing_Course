@@ -3,6 +3,7 @@ import JSXValue from './ex.2-1026-1/JSXValue'
 import StudentList from './ex.3-1026-2/StudentList'
 import Menu from './ex.4-1026-3-Menu/Menu'
 import Demo from './ex.5-1026-4-array/Demo'
+import Parent from './ex.6-1027-1/Parent'
 
 export const examples = [
   {
@@ -29,5 +30,10 @@ export const examples = [
     name: '5-陣列增刪',
     path: './ex.5-1026-4-array/Demo',
     component: Demo,
+  },
+  {
+    name: '6-props屬性',
+    path: './ex.6-1027-1/Parent',
+    component: Parent,
   },
 ]
