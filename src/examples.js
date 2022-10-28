@@ -9,8 +9,14 @@ import Parent from './ex.6-1027-1/Parent'
 import ParentPropTypes from './ex.7-1027-2/Parent'
 import ParentDataFlow from './ex.8-1027-3/Parent'
 import InputDemo from './ex.9-1028-1/InputDemo'
+import HTML5Form from './ex.10-1028-2/HTML5Form'
 
 export const examples = [
+  {
+    name: '10-各種可控表單元素',
+    path: './ex.10-1028-2/HTML5Form',
+    component: HTML5Form,
+  },
   {
     name: '9-可控vs不可控表單元素',
     path: './ex.9-1028-1/InputDemo',
