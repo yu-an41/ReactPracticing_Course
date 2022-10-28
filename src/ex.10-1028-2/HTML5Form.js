@@ -7,7 +7,10 @@ function HTML5Form() {
   const [agree, setAgree] = useState(false)
 
   const [gender, setGender] = useState('')
-  const genderOPtions = ['male', 'female', 'none']
+  const genderOptions = ['male', 'female', 'none']
+
+  const [pet, setPet] = useState('')
+  const petOptions = ['dog', 'cat', 'goldfish']
 
   return (
     <>
@@ -39,7 +42,7 @@ function HTML5Form() {
       <label>同意會員註冊條款</label>
       <hr />
       <h1>選項按鈕群組(radio grouop)</h1>
-      {genderOPtions.map((v, i) => {
+      {genderOptions.map((v, i) => {
         return (
           <div key={i}>
             <input
@@ -54,6 +57,23 @@ function HTML5Form() {
           </div>
         )
       })}
+      <hr />
+      <h1>下拉式選單(select)</h1>
+      <select
+        value={pet}
+        onChange={(e) => {
+          setPet(e.target.value)
+        }}
+      >
+        <option value="">--choose your pet--</option>
+        {petOptions.map((v, i) => {
+          return (
+            <option key={i} value={v}>
+              {v}
+            </option>
+          )
+        })}
+      </select>
     </>
   )
 }
