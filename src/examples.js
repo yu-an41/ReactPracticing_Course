@@ -8,8 +8,14 @@ import Parent from './ex.6-1027-1/Parent'
 //預設導出的話可以再導入時直接給改名)
 import ParentPropTypes from './ex.7-1027-2/Parent'
 import ParentDataFlow from './ex.8-1027-3/Parent'
+import InputDemo from './ex.9-1028-1/InputDemo'
 
 export const examples = [
+  {
+    name: '9-可控vs不可控表單元素',
+    path: './ex.9-1028-1/InputDemo',
+    component: InputDemo,
+  },
   {
     name: '8-三種資料流',
     path: './ex.8-1027-3/Parent',
