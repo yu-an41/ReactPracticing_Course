@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import InputById from './InputById'
+import InputByRefs from './InputByRefs'
 
 export default function InputDemo() {
   const [inputText, setInputText] = useState('')
+
   return (
     <div>
       <h1>可控表單元件</h1>
@@ -13,9 +16,21 @@ export default function InputDemo() {
           setInputText(e.target.value)
         }}
       />
+      <button
+        onClick={(e) => {
+          setInputText('abc@gmail.com')
+        }}
+      >
+        載入資料
+      </button>
       <hr />
-      <h1>不可控表單元件</h1>
-      <input type="text" />
+      <h1>不可控表單元件(id)</h1>
+      <InputById />
+      <InputById />
+      <hr />
+      <h1>不可控表單元件(ref)</h1>
+      <InputByRefs />
+      <InputByRefs />
     </div>
   )
 }
