@@ -42,9 +42,18 @@ function BMI() {
       >
         計算
       </button>
+      <button
+        onClick={(e) => {
+          setMyHeight(0)
+          setMyWeight(0)
+          setMyBMI(0)
+        }}
+      >
+        清除
+      </button>
       <br />
       {/* .toFixed()格式化數字用，括號內表示保留幾位小數後四捨五入 */}
-      <p>你的BMI值為：{myBMI.toFixed(1)}</p>
+      <p>你的BMI值為：{myBMI !== 0 && myBMI.toFixed(1)}</p>
     </>
   )
 }
