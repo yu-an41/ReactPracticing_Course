@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+.completed {
+    text-decoration: line-through;
+    color: #333;
+}
+
+.incompleted {
+    color: green;
+    font-weight: bold;
+}
