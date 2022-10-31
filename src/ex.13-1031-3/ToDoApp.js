@@ -35,7 +35,11 @@ function ToDoApp() {
         }}
         onKeyDown={(e) => {
           if (e.key === 'Enter' && isComposition === false) {
-            const newTodo = { id: Number(new Date()), text: e.target.value }
+            const newTodo = {
+              id: Number(new Date()),
+              text: e.target.value,
+              completed: false,
+            }
             const newTodos = [newTodo, ...todos]
             setTodos(newTodos)
 
