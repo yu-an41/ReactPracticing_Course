@@ -10,8 +10,14 @@ import ParentPropTypes from './ex.7-1027-2/Parent'
 import ParentDataFlow from './ex.8-1027-3/Parent'
 import InputDemo from './ex.9-1028-1/InputDemo'
 import HTML5Form from './ex.10-1028-2/HTML5Form'
+import BMI from './ex.11-1031-1/BMI'
 
 export const examples = [
+  {
+    name: '11-BMI線上計算表單',
+    path: './ex.11-1031-1/BMI',
+    component: BMI,
+  },
   {
     name: '10-各種可控表單元素',
     path: './ex.10-1028-2/HTML5Form',
