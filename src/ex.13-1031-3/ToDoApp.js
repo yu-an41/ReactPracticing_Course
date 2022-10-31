@@ -4,6 +4,7 @@ function ToDoApp() {
   const [inputValue, setInputValue] = useState('')
   const [isComposition, setIsComposition] = useState(false)
 
+  const [inputEditingValue, setInputEditingValue] = useState('')
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -35,23 +36,31 @@ function ToDoApp() {
   }
 
   // 用某個property，為布林值，true/false互換
-  const toggleTodo = (id, property) => {
-    // step 1: 拷貝新的物件陣列
-    // step 2: 在新的物件陣列上修改
+  const toggleTodoCompleted = (id) => {
     const newTodos = todos.map((v, i) => {
-      if (v.id === id) return { ...v, [property]: !v[property] }
+      if (v.id === id) return { ...v, completed: !v.completed }
       return { ...v }
     })
 
     // step 3: 設定回state
     setTodos(newTodos)
   }
+  const toggleTodoEditing = (id) => {
+    const newTodos = todos.map((v, i) => {
+      if (v.id === id) return { ...v, editing: !v.editing }
+      //這裡要關掉其它編輯中的，因為同時間只能有一個被編輯！！
+      return { ...v, editing: false }
+    })
 
-  const updateTodo = (id, property, value) => {
+    setTodos(newTodos)
+  }
+
+  // 用在某個id項目改變為某值用，合併物件值
+  const updateTodo = (id, objectValue) => {
     // step 1: 拷貝新的物件陣列
     // step 2: 在新的物件陣列上修改
     const newTodos = todos.map((v, i) => {
-      if (v.id === id) return { ...v, [property]: value }
+      if (v.id === id) return { ...v, ...objectValue }
 
       return { ...v }
     })
@@ -102,14 +111,27 @@ function ToDoApp() {
                 type="checkbox"
                 checked={v.completed}
                 onChange={() => {
-                  toggleTodo(v.id, 'completed')
+                  toggleTodoCompleted(v.id, 'completed')
                 }}
               />
-              {v.editing ? <input type="text" value={v.text} /> : v.text}
+              {v.editing ? (
+                <input
+                  type="text"
+                  value={inputEditingValue}
+                  onChange={(e) => {
+                    setInputEditingValue(e.target.value)
+                  }}
+                />
+              ) : (
+                v.text
+              )}
               {v.editing ? (
                 <button
                   onClick={() => {
-                    toggleTodo(v.id, 'editing')
+                    updateTodo(v.id, {
+                      text: inputEditingValue,
+                      editing: false,
+                    })
                   }}
                 >
                   儲存
@@ -117,7 +139,8 @@ function ToDoApp() {
               ) : (
                 <button
                   onClick={() => {
-                    toggleTodo(v.id, 'editing')
+                    toggleTodoEditing(v.id, 'editing')
+                    setInputEditingValue(v.text)
                   }}
                 >
                   編輯
