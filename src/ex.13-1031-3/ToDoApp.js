@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import './ToDoApp.css'
-function ToDoApp() {
-  const [inputValue, setInputValue] = useState('')
-  const [isComposition, setIsComposition] = useState(false)
+import AddFrom from './AddForm'
 
+function ToDoApp() {
   const [inputEditingValue, setInputEditingValue] = useState('')
   const [todos, setTodos] = useState([
     {
@@ -79,26 +78,7 @@ function ToDoApp() {
   return (
     <>
       <h1>My To Do List</h1>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => {
-          setInputValue(e.target.value)
-        }}
-        // 中文輸入法用
-        onCompositionStart={() => {
-          setIsComposition(true)
-        }}
-        onCompositionEnd={() => {
-          setIsComposition(false)
-        }}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' && isComposition === false) {
-            addTodo(e.target.value)
-            setInputValue('')
-          }
-        }}
-      />
+      <AddFrom addTodo={addTodo} />
       <ul>
         {todos.map((v, i) => {
           // 因為i會改變，不能拿來當作key使用
@@ -111,7 +91,7 @@ function ToDoApp() {
                 type="checkbox"
                 checked={v.completed}
                 onChange={() => {
-                  toggleTodoCompleted(v.id, 'completed')
+                  toggleTodoCompleted(v.id)
                 }}
               />
               {v.editing ? (
