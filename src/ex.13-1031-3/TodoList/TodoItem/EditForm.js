@@ -1,6 +1,8 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 
-function EditForm({ id, updateTodo, inputEditingValue, setInputEditingValue }) {
+function EditForm({ id, updateTodo, text }) {
+  const [inputEditingValue, setInputEditingValue] = useState(text)
+
   return (
     <>
       <input
