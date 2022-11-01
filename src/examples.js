@@ -5,7 +5,7 @@ import StudentList from './ex.3-1026-2/StudentList'
 import Demo from './ex.5-1026-4-array/Demo'
 import Parent from './ex.6-1027-1/Parent'
 
-//預設導出的話可以再導入時直接給改名)
+//預設導出的話可以在導入時直接給改名)
 import ParentPropTypes from './ex.7-1027-2/Parent'
 import ParentDataFlow from './ex.8-1027-3/Parent'
 import InputDemo from './ex.9-1028-1/InputDemo'
@@ -13,13 +13,13 @@ import HTML5Form from './ex.10-1028-2/HTML5Form'
 
 import BMI from './ex.11-1031-1/BMI'
 import BirthSelect from './ex.12-1031-2/BirthSelect'
-import ToDoApp from './ex.13-1031-3/ToDoApp'
+import TodoApp from './ex.13-1031-3/TodoApp'
 
 export const examples = [
   {
     name: '13-To Do List',
-    path: './ex.13-1031-3/ToDoApp',
-    component: ToDoApp,
+    path: './ex.13-1031-3/TodoApp',
+    component: TodoApp,
   },
   {
     name: '12-下拉式生日選單',

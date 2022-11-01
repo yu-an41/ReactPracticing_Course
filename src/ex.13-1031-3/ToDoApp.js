@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './ToDoApp.css'
+import './TodoApp.css'
 import AddFrom from './AddForm'
 
-function ToDoApp() {
+function TodoApp() {
   const [inputEditingValue, setInputEditingValue] = useState('')
   const [todos, setTodos] = useState([
     {
@@ -141,4 +141,4 @@ function ToDoApp() {
   )
 }
 
-export default ToDoApp
+export default TodoApp
