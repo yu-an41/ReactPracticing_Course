@@ -15,7 +15,14 @@ import BMI from './ex.11-1031-1/BMI'
 import BirthSelect from './ex.12-1031-2/BirthSelect'
 import TodoApp from './ex.13-1031-3/TodoApp'
 
+import MultipleInput from './ex.14-1101-1/MultipleInput'
+
 export const examples = [
+  {
+    name: '14-多個表單元素共用單一state',
+    path: './ex.14-1101-1/MultipleInput',
+    component: MultipleInput,
+  },
   {
     name: '13-To Do List',
     path: './ex.13-1031-3/TodoApp',

@@ -2,22 +2,25 @@ import { useState } from 'react'
 import './TodoApp.css'
 import AddFrom from './AddForm'
 
+const sample = [
+  {
+    id: 1,
+    text: '買牛奶',
+    completed: true,
+    editing: false,
+  },
+  {
+    id: 2,
+    text: '學react',
+    completed: false,
+    editing: false,
+  },
+]
 function TodoApp() {
   const [inputEditingValue, setInputEditingValue] = useState('')
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: '買牛奶',
-      completed: true,
-      editing: false,
-    },
-    {
-      id: 2,
-      text: '學react',
-      completed: false,
-      editing: false,
-    },
-  ])
+  const [todos, setTodos] = useState(sample)
+
+  const [todoDisplay, setTodoDisplay] = useState([])
 
   const addTodo = (text) => {
     // id
