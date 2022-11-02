@@ -17,8 +17,14 @@ import TodoApp from './ex.13-1031-3/TodoApp'
 
 import MultipleInput from './ex.14-1101-1/MultipleInput'
 import HTML5ValidForm from './ex.15-1102-1/HTML5ValidForm'
+import Lifecycle from './ex.16-1102-2/Lifecycle'
 
 export const examples = [
+  {
+    name: '16-生命週期',
+    path: './ex.16-1102-2/Lifecycle',
+    component: Lifecycle,
+  },
   {
     name: '15-表單驗證',
     path: './ex.15-1102-1/HTML5ValidForm',
