@@ -10,7 +10,7 @@ class CC extends Component {
   componentDidMount() {
     // 第一次render完（虛擬DOM變真實DOM）才會呼叫
     console.log('componentDidMount')
-    this.setState({ total: 2 })
+    // this.setState({ total: 2 })
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -21,6 +21,10 @@ class CC extends Component {
     if (prevState === 5) {
       this.setState({ name: 'Bambi' })
     }
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
   }
 
   render() {
