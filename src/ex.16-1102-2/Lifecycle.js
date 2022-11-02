@@ -7,8 +7,8 @@ function Lifecycle() {
 
   return (
     <>
-      {show && <CC />}
-      {/* <FC /> */}
+      {/* {show && <CC />} */}
+      {show && <FC />}
       <button
         onClick={() => {
           setShow(!show)
