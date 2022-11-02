@@ -16,8 +16,14 @@ import BirthSelect from './ex.12-1031-2/BirthSelect'
 import TodoApp from './ex.13-1031-3/TodoApp'
 
 import MultipleInput from './ex.14-1101-1/MultipleInput'
+import HTML5ValidForm from './ex.15-1102-1/HTML5ValidForm'
 
 export const examples = [
+  {
+    name: '15-表單驗證',
+    path: './ex.15-1102-1/HTML5ValidForm',
+    component: HTML5ValidForm,
+  },
   {
     name: '14-多個表單元素共用單一state',
     path: './ex.14-1101-1/MultipleInput',
