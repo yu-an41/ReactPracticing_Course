@@ -21,15 +21,21 @@ import Lifecycle from './ex.16-1102-2/Lifecycle'
 import User from './ex.17-1102-3/User'
 
 import ImageDemo from './ex.18-1103-1/ImageDemo'
+import UserDemo from './ex.19-1103-2/UserDemo'
 
 export const examples = [
+  {
+    name: '19-從伺服器載入資料，搜尋＆分頁',
+    path: './ex.19-1103-2/UserDemo',
+    component: UserDemo,
+  },
   {
     name: '18-圖片使用說明',
     path: './ex.1103-1/ImageDemo',
     component: ImageDemo,
   },
   {
-    name: '17-從遠端伺服器載入會員資料',
+    name: '17-從伺服器載入資料',
     path: './ex.17-1102-3/User',
     component: User,
   },
