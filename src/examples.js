@@ -20,7 +20,14 @@ import HTML5ValidForm from './ex.15-1102-1/HTML5ValidForm'
 import Lifecycle from './ex.16-1102-2/Lifecycle'
 import User from './ex.17-1102-3/User'
 
+import ImageDemo from './ex.1103-1/ImageDemo'
+
 export const examples = [
+  {
+    name: '18-圖片使用說明',
+    path: './ex.1103-1/ImageDemo',
+    component: ImageDemo,
+  },
   {
     name: '17-從遠端伺服器載入會員資料',
     path: './ex.17-1102-3/User',
