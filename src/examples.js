@@ -20,7 +20,7 @@ import HTML5ValidForm from './ex.15-1102-1/HTML5ValidForm'
 import Lifecycle from './ex.16-1102-2/Lifecycle'
 import User from './ex.17-1102-3/User'
 
-import ImageDemo from './ex.1103-1/ImageDemo'
+import ImageDemo from './ex.18-1103-1/ImageDemo'
 
 export const examples = [
   {
