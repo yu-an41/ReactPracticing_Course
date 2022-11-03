@@ -19,7 +19,24 @@ function ImageDemo() {
       />
       <img
         // 套用 .env中的設定值
-        src={`${process.env.REACT_APP_DEV_URL}/Images/Screenshot%202022-10-23%20at%2011.30.16%20AM.png`}
+        src={`${process.env.REACT_APP_DEV_URL}/Images/Screenshot 2022-10-23 at 9.56.03 AM.png`}
+        alt=""
+        height="200"
+      />
+      <p>3. 圖片在Node(或其他伺服器上的)public目錄，用絕對網址存取</p>
+      <img
+        //  套用config/index.js 中的設定值
+        src={`${imgUrl}/Images/Screenshot%202022-10-23%20at%2011.30.16%20AM.png`}
+        alt=""
+        height="200"
+      />
+      <p>
+        4. 圖片在Node(或其他伺服器上的)public目錄，用3.
+        方式存取(注意：開發用，且須先設定proxy)
+      </p>
+      <img
+        //  套用config/index.js 中的設定值
+        src={`${imgUrl}/Images/Screenshot%202022-10-23%20at%2011.30.16%20AM.png`}
         alt=""
         height="200"
       />
