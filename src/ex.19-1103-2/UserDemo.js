@@ -1,14 +1,16 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+
+import InputIME from './InputIME'
+import _ from 'lodash'
 
 function UserDemo() {
-  const [users, setUsers] = useState([
-    {
-      //   id: '123456',
-      //   name: 'Bambi',
-      //   birth: '150521',
-    },
-  ])
+  // [{
+  //   "id": "107001",
+  //   "name": "張佳蓉",
+  //   "birth": "990101"
+  // }]
+  const [users, setUsers] = useState([])
 
   const [searchWord, setSearchWord] = useState('')
 
@@ -22,7 +24,7 @@ function UserDemo() {
       const response = await axios.get(
         'https://my-json-server.typicode.com/eyesofkids/json-fake-data/users'
       )
-      console.log(response)
+      // console.log(response)
 
       setUsers(response.data)
     } catch (e) {
@@ -32,14 +34,18 @@ function UserDemo() {
     }
   }
 
-  const getUsersBySearchWord = async () => {
+  const getUsersBySearchWord = async (keyword) => {
+    // 先開啟載入指示器
+    setIsLoading(true)
+
     try {
       const response = await axios.get(
         'https://my-json-server.typicode.com/eyesofkids/json-fake-data/users?name_like=' +
-          searchWord
+          keyword
       )
-      console.log(response)
+      // console.log(response)
 
+      //設定到state裡
       setUsers(response.data)
     } catch (e) {
       // 錯誤處理
@@ -48,6 +54,33 @@ function UserDemo() {
     }
   }
 
+  const handleSearch = (keyword) => {
+    if (keyword === '') {
+      getUsers()
+      return
+    }
+
+    getUsersBySearchWord(keyword)
+  }
+
+  // debounce function + useCallback
+  // 用途: 當不斷輸入input時，同一時間內要先停止觸發事件，直到輸入停止，400ms為等待時間
+  // 使用debounce的主因，是因項目呈現、退場動畫、重新排位動畫三者均需計算與時間
+  // 觸發太頻繁時，會造成動畫卡頓或卡住的現象
+  const debounceHandleSearch = useCallback(_.debounce(handleSearch, 400), [])
+
+  const handleChange = (e) => {
+    // 可控元件綁用state使用
+    setSearchWord(e.target.value)
+
+    // 搜尋用 - trim去除空白，toLowerCase轉小寫英文
+    const newSearchWord = e.target.value.trim().toLowerCase()
+
+    // 傳至debounceFn中
+    debounceHandleSearch(newSearchWord)
+  }
+
+  // 延後1.5秒才關掉指示器
   useEffect(() => {
     setIsLoading(true)
 
@@ -92,22 +125,41 @@ function UserDemo() {
     <>
       <h1>會員資料</h1>
       <hr />
+      InputIME + debounce
+      <br />
+      <InputIME
+        type="text"
+        value={searchWord}
+        placeholder="輸入名稱搜尋"
+        onChange={handleChange}
+      />
+      <br />
+      一般input+按鈕
+      <br />
+      <hr />
       <input
         // 不要過度頻繁的跟伺服器要資料
         type="text"
         value={searchWord}
+        placeholder="輸入名稱搜尋"
         onChange={(e) => {
-          setSearchWord(e.target.value)
+          const newSearchWord = e.target.value
+
+          setSearchWord(newSearchWord)
+
+          getUsersBySearchWord(newSearchWord)
         }}
       />
       <button
-        onClick={(e) => {
-          setIsLoading(true)
-          getUsersBySearchWord()
+        onClick={() => {
+          // setIsLoading(true)
 
-          setTimeout(() => {
-            setIsLoading(false)
-          }, 1500)
+          getUsersBySearchWord(searchWord)
+
+          // 延後1.5秒才關掉指示器
+          // setTimeout(() => {
+          //  setIsLoading(false)
+          // }, 2000)
         }}
       >
         搜尋

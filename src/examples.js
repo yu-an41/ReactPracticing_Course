@@ -23,7 +23,14 @@ import User from './ex.17-1102-3/User'
 import ImageDemo from './ex.18-1103-1/ImageDemo'
 import UserDemo from './ex.19-1103-2/UserDemo'
 
+import UserPage from './ex.20-1104-1/UserPage'
+
 export const examples = [
+  {
+    name: '20-從伺服器載入資料分頁',
+    path: './ex.20-1104-1/UserPage',
+    component: UserPage,
+  },
   {
     name: '19-從伺服器載入資料，搜尋＆分頁',
     path: './ex.19-1103-2/UserDemo',

@@ -7,3 +7,7 @@ export const appConfig = {
 // 完成後(debug: false) 用prodUrl存取
 
 export const imgUrl = appConfig.debug ? appConfig.devUrl : appConfig.prodUrl
+
+export const logger = (v) => {
+  return appConfig.debug ? console.log(v) : ''
+}
